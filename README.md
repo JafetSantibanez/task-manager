@@ -1,3 +1,173 @@
+# 📋 Task Manager - Mini CRUD de Tareas
+
+## 📖 Descripción
+
+**Task Manager** es una aplicación web desarrollada como parte de una prueba técnica para demostrar el desarrollo de un CRUD (Create, Read, Update y Delete) utilizando **Laravel** como backend y **JavaScript Vanilla** con **Fetch API** para el consumo de una API REST.
+
+La aplicación permite administrar tareas de forma sencilla, ofreciendo una interfaz intuitiva y una arquitectura limpia basada en buenas prácticas de desarrollo.
+
+---
+
+## ✨ Funcionalidades
+
+* ✅ Crear nuevas tareas.
+* 📋 Consultar todas las tareas registradas.
+* ✏️ Editar tareas existentes.
+* 🗑️ Eliminar tareas.
+* ✔️ Gestión de estados:
+
+  * Pendiente
+  * En progreso
+  * Completada
+* ⚠️ Validación de datos desde Laravel.
+* 🔄 Consumo de API REST mediante Fetch API.
+* 🎨 Interfaz desarrollada con HTML, CSS y JavaScript.
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+### Backend
+
+* PHP 8.x
+* Laravel 12
+* Eloquent ORM
+* API REST
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript (ES6+)
+* Fetch API
+* Blade Templates
+
+### Base de Datos
+
+* MySQL
+
+### Herramientas
+
+* Composer
+* Git
+* GitHub
+
+---
+
+## 🚀 Instalación
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/JafetSantibanez/task-manager.git
+```
+
+Entrar al proyecto:
+
+```bash
+cd task-manager
+```
+
+---
+
+### 2. Instalar dependencias
+
+```bash
+composer install
+```
+
+---
+
+### 3. Configurar el archivo de entorno
+
+Crear el archivo `.env` a partir del ejemplo:
+
+```bash
+cp .env.example .env
+```
+
+---
+
+### 4. Generar la clave de la aplicación
+
+```bash
+php artisan key:generate
+```
+
+---
+
+### 5. Configurar la base de datos
+
+Editar el archivo `.env` con las credenciales correspondientes:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=task_manager
+DB_USERNAME=tu_usuario
+DB_PASSWORD=tu_contraseña
+```
+
+---
+
+### 6. Ejecutar las migraciones
+
+```bash
+php artisan migrate
+```
+
+---
+
+### 7. Iniciar el servidor
+
+```bash
+php artisan serve
+```
+
+La aplicación estará disponible en:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## 📡 API REST
+
+| Método | Endpoint          | Descripción              |
+| ------ | ----------------- | ------------------------ |
+| GET    | `/api/tasks`      | Obtener todas las tareas |
+| POST   | `/api/tasks`      | Crear una tarea          |
+| PATCH  | `/api/tasks/{id}` | Actualizar una tarea     |
+| DELETE | `/api/tasks/{id}` | Eliminar una tarea       |
+
+---
+
+## 📸 Características implementadas
+
+* Arquitectura MVC con Laravel.
+* API REST para la gestión de tareas.
+* Comunicación asíncrona mediante Fetch API.
+* Renderizado dinámico de tareas.
+* Validaciones del lado del servidor.
+* Manejo de errores HTTP.
+* Estados de carga y notificaciones para mejorar la experiencia del usuario.
+
+---
+
+## 👨‍💻 Autor
+
+**Jafet Santibañez**
+
+GitHub: https://github.com/JafetSantibanez
+
+---
+
+## 📄 Licencia
+
+Este proyecto fue desarrollado con fines educativos como parte de una prueba técnica.
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
