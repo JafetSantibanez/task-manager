@@ -96,7 +96,13 @@ php artisan key:generate
 
 ---
 
-### 5. Configurar la base de datos
+### 5. Crear y Configurar la base de datos
+
+Crear una base de datos en MySQL con el nombre que desees. Por ejemplo:
+
+```sql
+CREATE DATABASE task_manager;
+```
 
 Editar el archivo `.env` con las credenciales correspondientes:
 
