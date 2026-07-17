@@ -1,0 +1,567 @@
+/* =====================================================
+   VARIABLES GLOBALES
+===================================================== */
+
+:root {
+    --color-background: #f4f6f9;
+    --color-surface: #ffffff;
+
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+
+    --color-text: #1f2937;
+    --color-text-light: #6b7280;
+
+    --color-border: #d1d5db;
+
+    --color-danger: #dc2626;
+    --color-success: #16a34a;
+
+    --shadow:
+        0 10px 25px rgba(0,0,0,.08);
+
+    --radius: 12px;
+
+    --transition: .25s ease;
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        var(--color-background);
+
+    color:
+        var(--color-text);
+
+    line-height:1.5;
+}
+
+/* =====================================================
+   CONTENEDOR
+===================================================== */
+
+.container{
+
+    width:min(1100px,90%);
+
+    margin:auto;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.app-header{
+
+    padding:
+
+        50px
+
+        0
+
+        30px;
+}
+
+.app-header h1{
+
+    font-size:2.4rem;
+
+    margin-bottom:10px;
+}
+
+.app-description{
+
+    color:
+
+        var(--color-text-light);
+}
+
+/* =====================================================
+   SECCIÓN DEL FORMULARIO
+===================================================== */
+
+.task-form-section {
+    background: var(--color-surface);
+    padding: 32px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+
+.task-form-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+}
+
+/* =====================================================
+   GRUPOS DEL FORMULARIO
+===================================================== */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+
+    font: inherit;
+    color: var(--color-text);
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+
+    outline: none;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* =====================================================
+   ESTADO DE FOCO
+===================================================== */
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--color-primary);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* =====================================================
+   ERRORES DE VALIDACIÓN
+===================================================== */
+
+.field-error {
+    min-height: 20px;
+
+    color: var(--color-danger);
+
+    font-size: 0.875rem;
+}
+
+/* =====================================================
+   ACCIONES DEL FORMULARIO
+===================================================== */
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+
+    padding: 12px 18px;
+
+    font: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition),
+        transform var(--transition),
+        opacity var(--transition);
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#submit-button {
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+#submit-button:hover {
+    background: var(--color-primary-hover);
+}
+
+#cancel-edit-button {
+    background: #e5e7eb;
+    color: var(--color-text);
+}
+
+#cancel-edit-button:hover {
+    background: #d1d5db;
+}
+
+/* =====================================================
+   NOTIFICACIONES
+===================================================== */
+
+.notification {
+    margin-bottom: 24px;
+    padding: 14px 16px;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.notification.success {
+    color: #166534;
+    background: #dcfce7;
+    border-color: #86efac;
+}
+
+.notification.error {
+    color: #991b1b;
+    background: #fee2e2;
+    border-color: #fca5a5;
+}
+
+/* =====================================================
+   SECCIÓN DE TAREAS
+===================================================== */
+
+.task-list-section {
+    background: var(--color-surface);
+
+    padding: 32px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 48px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 24px;
+}
+
+.section-eyebrow {
+    margin-bottom: 4px;
+
+    color: var(--color-primary);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    font-size: 1.5rem;
+}
+
+#task-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 90px;
+
+    padding: 8px 12px;
+
+    color: var(--color-primary);
+
+    background: #eff6ff;
+
+    border-radius: 999px;
+
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+/* =====================================================
+   ESTADOS DE CARGA Y VACÍO
+===================================================== */
+
+.state-message {
+    padding: 32px 20px;
+
+    color: var(--color-text-light);
+
+    text-align: center;
+
+    border: 1px dashed var(--color-border);
+    border-radius: 10px;
+}
+
+/* =====================================================
+   LISTA DE TAREAS
+===================================================== */
+
+.task-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 20px;
+}
+
+/* =====================================================
+   TARJETAS
+===================================================== */
+
+.task-card {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    min-width: 0;
+
+    padding: 20px;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+}
+
+.task-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #93c5fd;
+
+    box-shadow:
+        0 12px 24px rgba(15, 23, 42, 0.1);
+}
+
+.task-card.completed {
+    background: #f8fafc;
+}
+
+.task-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 16px;
+}
+
+.task-card-title {
+    overflow-wrap: anywhere;
+
+    font-size: 1.1rem;
+}
+
+.task-card-description {
+    overflow-wrap: anywhere;
+
+    color: var(--color-text-light);
+
+    font-size: 0.95rem;
+}
+
+.task-card-description.empty {
+    font-style: italic;
+}
+
+.task-card.completed .task-card-title {
+    color: var(--color-text-light);
+
+    text-decoration: line-through;
+}
+
+/* =====================================================
+   ESTADOS DE TAREA
+===================================================== */
+
+.task-status {
+    display: inline-flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.task-status.pending {
+    color: #92400e;
+    background: #fef3c7;
+}
+
+.task-status.completed {
+    color: #166534;
+    background: #dcfce7;
+}
+
+/* =====================================================
+   INFORMACIÓN Y ACCIONES
+===================================================== */
+
+.task-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-top: auto;
+}
+
+.task-date {
+    color: var(--color-text-light);
+
+    font-size: 0.8rem;
+}
+
+.task-actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.edit-button,
+.delete-button {
+    padding: 9px 12px;
+
+    font-size: 0.875rem;
+}
+
+.edit-button {
+    color: #1e40af;
+    background: #dbeafe;
+}
+
+.edit-button:hover {
+    background: #bfdbfe;
+}
+
+.delete-button {
+    color: #991b1b;
+    background: #fee2e2;
+}
+
+.delete-button:hover {
+    background: #fecaca;
+}
+
+/* =====================================================
+   ATRIBUTO HIDDEN
+===================================================== */
+
+[hidden] {
+    display: none !important;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 640px) {
+    .app-header {
+        padding-top: 32px;
+    }
+
+    .app-header h1 {
+        font-size: 1.9rem;
+    }
+
+    .task-form-section,
+    .task-list-section {
+        padding: 22px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .task-list {
+        grid-template-columns: 1fr;
+    }
+
+    .task-card-header,
+    .task-card-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .task-actions,
+    .form-actions {
+        width: 100%;
+    }
+
+    .task-actions button,
+    .form-actions button {
+        flex: 1;
+    }
+}
